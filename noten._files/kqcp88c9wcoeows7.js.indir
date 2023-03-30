@@ -1,0 +1,41 @@
+$('.panel-menu-btn').on('click', function () {
+  $('.panel-page-side').toggleClass('show')
+})
+
+$('.hamburger-btn').on('click', function () {
+  $('.mobile-menu-bg').addClass('show')
+  $('.mobile-menu').addClass('show')
+})
+$('.close-menu').on('click', function () {
+  $('.mobile-menu-bg').removeClass('show')
+  $('.mobile-menu').removeClass('show')
+})
+$('.mobile-menu-bg').on('click', function () {
+  $('.mobile-menu-bg').removeClass('show')
+  $('.mobile-menu').removeClass('show')
+})
+
+$(document).ready(function(){
+  $("#serv-inp").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#serv-table tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+}); 
+
+$('.logos-list a').click(function(){
+
+	var dataFilter=$(this).data("services-filter");
+      console.log(dataFilter);
+        var value = dataFilter;
+        $(".app-mtable tr").filter(function() {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+   });
+
+
+$('.notify').hide()
+jQuery('.notify-btn').on('click',function(){
+  jQuery('.notify').toggle();
+})
